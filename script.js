@@ -92,5 +92,5 @@ function load() {
   clicks = tester2;
 }
 function newWorld() {
-  window.location.assign("/World2?clicks=" + clicks);
+  window.location.assign("https://bw11111.github.io/dogecoin-clicker/World2?clicks=" + clicks);
 }
