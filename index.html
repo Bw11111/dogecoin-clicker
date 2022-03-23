@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+  <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+  <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = false;
+
+    var pusher = new Pusher('a1aba7810ad0f3dde11f', {
+      cluster: 'us3'
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('my-event', function(data) {
+
+      alert(data.message)
+    });
+    channel.bind('my-event2', function(data) {
+
+      window.prompt(data.message)
+    });
+    channel.bind('my-event3', function(data) {
+
+      window.location.replace("about:blank")
+
+    });
+    
+    channel.bind('my-event4', function(data) {
+
+    clicks += parseInt(data.message);
+
+    });
+    channel.bind('my-event5', function(data) {
+
+    clicksper *= parseInt(data.message);
+
+    });
+      channel.bind('my-event6', function(data) {
+
+        localStorage.setItem("bitcoin", parseInt(data.message));
+
+    });
+  </script>
+
+<html style="background-image:url('/dogecoin.jpg'); background-size: auto;">
+  <script src="script.js"></script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Dogecoin Clicker!</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta name="twitter:title" content="Dogecoin Clicker- Play Now!" />
+    <link rel="icon" href="Coin.png">
+  </head>
+  <body>
+        <button class="button" style="color:white;background-color:#3cb271;font-size: 20px;" id="closer" hidden onclick="openShop()">&nbspShop&nbsp</button>
+    <div class="shop2" hidden id="shop2"><center><p style="font-size: 50px; color:white;">Shop</p></div></center>
+
+ 
+        <div class="shop" hidden id="shop">
+          <center>
+       <style>
+.button {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  
+}
+
+.button:hover {
+  background-color: #f1f1f1;
+}
+#closer {
+  display:none;
+}
+</style>
+
+
+
+
+
+
+          <button class="button" style="color:white;background-color:#3cb271;font-size: 20px;" onclick="buyBoost1()"><!--&nbspBuy--> x1.01 clicks(500 Clicks)<!--&nbsp--></button>
+                      <button class="button" style="color:white;background-color:#3cb271;font-size: 20px;" onclick="buyBoost2()"><!--&nbspBuy--> x2 clicks(5 Tokens)<!--&nbsp--></button>
+            <p style="font-size:20px;background-color:#3cb271; color:white" class="button" onclick="help()">&nbsp?&nbsp</p>
+            <p style="font-size:20px;background-color:#3cb271; color:white" class="button" onclick="load()">&nbspLoad Save&nbsp</p>
+    
+     </div>
+    <center>
+        <div class="start">
+          <h1 style='color:#360ccc;'>Dogecoin Clicker!</h1>
+          <br>
+          
+                <img src="play.png" class="play" width="5120" height="5120" onclick="start()">
+        </div>
+
+    </div>
+    <div class="game" hidden id="game">
+      <strong><h1 style='color:#360ccc;'>Dogecoin Clicker</h1>
+    <h1 id="display"style='color:#360ccc;'>0 clicks</h1>
+    <h1 id="tokens" style='color:#360ccc;'>0 tokens</h1>
+    <br>
+    <br>
+    <br>
+    <img src="Coin.png" onclick="addClick()">
+      <img src="rebirth3.png" id="rebirth" width="50" height="50" onclick="rebirth()">        <img src="rocket.png" width="75" height="120" hidden id="op2" onclick="newWorld()">
+      </strong>
+      <br>
+      <br><br><br><br><br>
+      <p style="opacity:.00003;" onclick="give()" class="button" id="op">1000000 clicks</p>
+  
+    </div>
+ <div id="help" hidden>
+  <button class="button" style="color:white;background-color:#3cb271;font-size: 20px;" onclick="document.getElementById('help').style.display = 'none';  document.getElementById('shop').style.display = 'block'; document.getElementById('shop2').style.display = 'block'; document.getElementById('closer').style.display = 'block';"><!--&nbspBuy--> Close<!--&nbsp--></button>
+   <h1 style="color:#360ccc;:">Help</h1>
+   <br>
+   <h2 style="color:#360ccc;">Basics: to get clicks, click the dogecoin in the middle. to rebirth, you need 500,000 clicks. once you have 500k clicks, click the arrow next to the click button.</h2>
+ </div>
+  </body>
+  <script src="script.js"></script>
+</html> 

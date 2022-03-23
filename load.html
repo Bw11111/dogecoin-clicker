@@ -1,0 +1,10 @@
+<!doctype html>
+<meter id="load"></meter>
+<script>
+  var x = .1;
+  function load() {
+    document.getElementById("load").setAttribute("value", x);
+    
+  }
+  setInterval(load, 3000)
+</script>
