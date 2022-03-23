@@ -31,3 +31,6 @@ body {
   background-repeat: no-repeat;
   
 }
+html {
+  background-image:url('/dogecoin.jpg'); background-size: auto;
+  }
